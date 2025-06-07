@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <style>
     body { font-family: 'Arial', sans-serif; }
+    .rainbow {
+      background: conic-gradient(red, orange, yellow, green, blue, indigo, violet);
     }
   </style>
 </head>
@@ -16,13 +18,15 @@
   <header class="flex flex-wrap justify-between items-center p-4 border-b border-white text-sm">
     <div class="flex flex-wrap items-center gap-2">
       <button class="bg-white text-black px-2 py-1 rounded-full font-bold">Human Defence DAO</button>
-      <button onclick="switchView('news')" class="bg-gray-800 px-2 py-1 rounded-full">News</button>
-      <button onclick="switchView('ai')" class="bg-gray-800 px-2 py-1 rounded-full">AI vs Human Labor</button>
-      <button onclick="switchView('manifesto')" class="bg-gray-800 px-2 py-1 rounded-full">Manifesto</button>
-      <button onclick="switchView('petition')" class="bg-gray-800 px-2 py-1 rounded-full">Petition</button>
-      <button onclick="switchView('signup')" class="bg-gray-800 px-2 py-1 rounded-full">Join DAO</button>
+      <button onclick="switchView('news')" class="bg-gray-600 px-2 py-1 rounded-full">News</button>
+      <button onclick="switchView('ai')" class="bg-gray-600 px-2 py-1 rounded-full">AI</button>
+      <button onclick="switchView('manifesto')" class="bg-gray-600 px-2 py-1 rounded-full">Manifesto</button>
+      <button onclick="switchView('petition')" class="bg-gray-600 px-2 py-1 rounded-full">Petition</button>
+      <button onclick="switchView('signup')" class="bg-gray-600 px-2 py-1 rounded-full">Join</button>
     </div>
     <div class="flex items-center gap-2 mt-2 md:mt-0">
+      <button onclick="document.body.classList.remove('bg-white', 'text-black'); document.body.classList.add('bg-black', 'text-white');" class="bg-black text-white border border-white px-2 py-1 rounded-full text-xs">🌙 Dark</button>
+      <button onclick="document.body.classList.remove('bg-black', 'text-white'); document.body.classList.add('bg-white', 'text-black');" class="bg-white text-black border border-black px-2 py-1 rounded-full text-xs">☀️ Light</button>
       <button onclick="setLang('en')" class="border border-white px-2 py-1 rounded-full">EN</button>
       <button onclick="setLang('es')" class="border border-white px-2 py-1 rounded-full">ES</button>
       <button onclick="setLang('ru')" class="border border-white px-2 py-1 rounded-full">RU</button>
@@ -44,9 +48,13 @@
     © 2025 HDEF.INFO — Defending Humanity with Decentralized Action
   </footer>
 
+  <!-- EMBED WIDGET -->
+  <script src="hdef-widget.js"></script>
+
   <!-- Scripts -->
   <script>
     let lang = 'en';
+    let currentView = 'news';
 
     const translations = {
       en: {
@@ -54,43 +62,99 @@
         newsSubtitle: "A REAL-TIME FEED OF GLOBAL EVENTS",
         manifesto: "We believe in decentralized defense of humanity, information integrity, and democratic action. HDEF.INFO is not just a platform — it's a movement. Read, act, organize.",
         ai: "Explore the growing impact of artificial intelligence on global employment, labor rights, and economic structures. Participate in building a world where human dignity prevails.",
-        petition: "Sign the petition to demand UBI in the face of AI automation. Every signature matters.",
-        signup: "Join the Human Defence DAO. Enter your email and take part in building decentralized humanity-centered governance."
+        petition: "✍️ Sign the petition to demand UBI in the face of AI automation. Every signature matters.",
+        signup: "🚀 Join the Human Defence DAO. Enter your email and take part in building decentralized humanity-centered governance."
       },
       es: {
         newsTitle: "RÍO DE NOTICIAS",
         newsSubtitle: "UN FLUJO DE EVENTOS GLOBALES EN TIEMPO REAL",
         manifesto: "Creemos en la defensa descentralizada de la humanidad, la integridad de la información y la acción democrática. HDEF.INFO no es solo una plataforma — es un movimiento. Lee, actúa, organiza.",
         ai: "Explora el creciente impacto de la inteligencia artificial en el empleo global, los derechos laborales y las estructuras económicas.",
-        petition: "Firma la petición por una renta básica universal frente a la automatización por IA.",
-        signup: "Únete a Human Defence DAO. Introduce tu email y participa en la construcción de una gobernanza descentralizada centrada en el ser humano."
+        petition: "✍️ Firma la petición por una renta básica universal frente a la automatización por IA.",
+        signup: "🚀 Únete a Human Defence DAO. Introduce tu email y participa en la construcción de una gobernanza descentralizada centrada en el ser humano."
       },
       ru: {
         newsTitle: "РЕКА НОВОСТЕЙ",
         newsSubtitle: "ПОТОК МИРОВЫХ СОБЫТИЙ В РЕАЛЬНОМ ВРЕМЕНИ",
         manifesto: "Мы верим в децентрализованную защиту человечества, информационную целостность и демократическое действие. HDEF.INFO — это не просто платформа, это движение.",
         ai: "Изучите влияние ИИ на глобальный рынок труда и экономику. Примите участие в построении справедливого будущего.",
-        petition: "Подпишите петицию за Базовый Доход в эпоху ИИ. Каждый голос важен.",
-        signup: " Присоединяйтесь HDEF Введите email и участвуйте в создании справедливой децентрализации."
+        petition: "✍️ Подпишите петицию за Базовый Доход в эпоху ИИ. Каждый голос важен.",
+        signup: "🚀 Присоединяйтесь к DAO Защиты Человека. Введите email и участвуйте в создании справедливой децентрализации."
       }
     };
 
     const views = {
-      news: () => `
-        <h1 class="text-4xl md:text-6xl font-bold leading-tight">
-          ${translations[lang].newsTitle}<br/>
-          ${translations[lang].newsSubtitle}
-        </h1>
-        <div class="mt-12 mx-auto w-full max-w-md">
-          <input type="text" placeholder="YOU CAN HELP US"
-            class="w-full px-4 py-3 text-black rounded-full outline-none border-none"/>
-        </div>
-      `,
+      news: () => {
+        document.getElementById('view').innerHTML = `
+          <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-8">
+            ${translations[lang].newsTitle}<br/>
+            ${translations[lang].newsSubtitle}
+          </h1>
+          <div id="hdef-widget" class="flex justify-center"></div>
+        `;
+
+        const style = document.createElement('style');
+        style.textContent = `
+          .hdef-track {
+            display: flex;
+            animation: hdef-scroll 60s linear infinite;
+            gap: 1rem;
+          }
+          @keyframes hdef-scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+          }
+          .hdef-card {
+            flex: 0 0 auto;
+            min-width: 280px;
+            background: rgba(255,255,255,0.8);
+            color: #000;
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-left: 4px solid #6200ee;
+          }
+          .hdef-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+          .hdef-card p { font-size: 0.9rem; margin-bottom: 0.2rem; }
+          .hdef-tags { font-size: 0.75rem; color: #555; }
+        `;
+        document.head.appendChild(style);
+
+        const track = document.createElement('div');
+        track.className = 'hdef-track';
+
+        const content = {
+          ru: [
+            ["трамп и Маск вступили в схватку", "трамп пообещал лишить космические проекты олигарха контрактов. маск предрёк рецессию.", "#Трамп #Маск #Рецессия"]
+          ],
+          en: [
+            ["Trump vs Musk", "Trump vows to strip Musk’s contracts. Musk predicts recession.", "#Trump #Musk #Recession"]
+          ],
+          es: [
+            ["Trump y Musk chocan", "Trump amenaza a Musk. Musk predice recesión.", "#Trump #Musk #Recesión"]
+          ]
+        };
+
+        const langNews = content[lang] || content['en'];
+
+        langNews.forEach(([title, desc, tags]) => {
+          const card = document.createElement('div');
+          card.className = 'hdef-card';
+          card.innerHTML = `<h3>${title}</h3><p>${desc}</p><p class='hdef-tags'>${tags}</p>`;
+          track.appendChild(card);
+        });
+
+        const container = document.createElement('div');
+        container.className = 'overflow-hidden w-full max-w-5xl mx-auto';
+        container.appendChild(track);
+
+        document.getElementById('hdef-widget').appendChild(container);
+      },
       ai: () => `
         <h1 class="text-4xl md:text-5xl font-bold">AI VS HUMAN LABOR</h1>
         <p class="mt-6 max-w-xl mx-auto">${translations[lang].ai}</p>
         <div class="mt-8">
-          <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXJxanMydnZwaDkzd3JiaTB5OWpwZmtzMW5jbGVxZW00ZWF0ZXk1ZCZlcD12MV8zNzVjZTZxYzZ2d2g4aGoybWpnODdvYnZobGZsb2FzZDFoZmxlbzJ2Z3NyMmtiNSZjdD1n/F9hQLAVhWnL56/giphy.gif" alt="AI gif" class="mx-auto rounded-lg shadow-md max-w-md">
+          <img src="https://media.giphy.com/media/F9hQLAVhWnL56/giphy.gif" alt="AI gif" class="mx-auto rounded-lg shadow-md max-w-md">
         </div>
       `,
       manifesto: () => `
@@ -100,7 +164,7 @@
       petition: () => `
         <h1 class="text-3xl md:text-4xl font-bold">PETITION</h1>
         <p class="mt-6 max-w-xl mx-auto">${translations[lang].petition}</p>
-        <button class="mt-8 bg-red-600 px-6 py-2 rounded-full font-bold hover:bg-red-800">Sign Now</button>
+        <button class="mt-8 bg-red-600 px-6 py-2 rounded-full font-bold hover:bg-red-800">✍️ Sign Now</button>
       `,
       signup: () => `
         <h1 class="text-3xl md:text-4xl font-bold">JOIN DAO</h1>
@@ -113,7 +177,12 @@
     };
 
     function switchView(view) {
-      document.getElementById('view').innerHTML = views[view]();
+      currentView = view;
+      if (typeof views[view] === 'function') {
+        document.getElementById('view').innerHTML = '';
+        const html = views[view]();
+        if (typeof html === 'string') document.getElementById('view').innerHTML = html;
+      }
     }
 
     function setLang(newLang) {
@@ -121,13 +190,6 @@
       switchView(currentView);
     }
 
-    let currentView = 'news';
-    function switchView(view) {
-      currentView = view;
-      document.getElementById('view').innerHTML = views[view]();
-    }
-
-    // Default view
     switchView(currentView);
   </script>
 
