@@ -6,9 +6,7 @@
   <title>HDEF.INFO – Human Defence DAO</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <style>
-    body {
-      font-family: 'Arial', sans-serif;
-    }
+    body { font-family: 'Arial', sans-serif; }
     .rainbow {
       background: conic-gradient(red, orange, yellow, green, blue, indigo, violet);
     }
@@ -20,32 +18,25 @@
   <header class="flex flex-wrap justify-between items-center p-4 border-b border-white text-sm">
     <div class="flex flex-wrap items-center gap-2">
       <button class="bg-white text-black px-2 py-1 rounded-full font-bold">Human Defence DAO</button>
-      <button class="bg-gray-800 px-2 py-1 rounded-full">News</button>
-      <button class="bg-gray-800 px-2 py-1 rounded-full">AI vs Human Labor</button>
-      <button class="bg-gray-800 px-2 py-1 rounded-full">Manifesto</button>
+      <button onclick="switchView('news')" class="bg-gray-800 px-2 py-1 rounded-full">News</button>
+      <button onclick="switchView('ai')" class="bg-gray-800 px-2 py-1 rounded-full">AI vs Human Labor</button>
+      <button onclick="switchView('manifesto')" class="bg-gray-800 px-2 py-1 rounded-full">Manifesto</button>
+      <button onclick="switchView('petition')" class="bg-gray-800 px-2 py-1 rounded-full">Petition</button>
+      <button onclick="switchView('signup')" class="bg-gray-800 px-2 py-1 rounded-full">Join DAO</button>
     </div>
     <div class="flex items-center gap-2 mt-2 md:mt-0">
-      <button class="border border-white px-2 py-1 rounded-full">EN</button>
-      <button class="border border-white px-2 py-1 rounded-full">ES</button>
-      <button class="border border-white px-2 py-1 rounded-full">RU</button>
-      <button class="bg-white text-black px-3 py-1 rounded-full font-bold">DAO Sign-up</button>
+      <button onclick="setLang('en')" class="border border-white px-2 py-1 rounded-full">EN</button>
+      <button onclick="setLang('es')" class="border border-white px-2 py-1 rounded-full">ES</button>
+      <button onclick="setLang('ru')" class="border border-white px-2 py-1 rounded-full">RU</button>
     </div>
   </header>
 
-  <!-- Hero -->
-  <main class="text-center py-20 px-4">
-    <h1 class="text-4xl md:text-6xl font-bold leading-tight">
-      NEWS RIVER<br/>
-      A REAL-TIME FEED OF GLOBAL EVENTS
-    </h1>
-
-    <div class="mt-12 mx-auto w-full max-w-md">
-      <input type="text" placeholder="YOU CAN HELP US"
-        class="w-full px-4 py-3 text-black rounded-full outline-none border-none"/>
-    </div>
+  <!-- Central View -->
+  <main id="view" class="text-center py-20 px-4">
+    <!-- Loaded dynamically -->
   </main>
 
-  <!-- Rainbow -->
+  <!-- Rainbow Element -->
   <div class="fixed bottom-0 right-0 w-40 h-40 rounded-full overflow-hidden">
     <div class="w-full h-full rainbow opacity-90"></div>
   </div>
@@ -54,6 +45,93 @@
   <footer class="text-center text-xs text-gray-400 py-6">
     © 2025 HDEF.INFO — Defending Humanity with Decentralized Action
   </footer>
+
+  <!-- Scripts -->
+  <script>
+    let lang = 'en';
+
+    const translations = {
+      en: {
+        newsTitle: "NEWS RIVER",
+        newsSubtitle: "A REAL-TIME FEED OF GLOBAL EVENTS",
+        manifesto: "We believe in decentralized defense of humanity, information integrity, and democratic action. HDEF.INFO is not just a platform — it's a movement. Read, act, organize.",
+        ai: "Explore the growing impact of artificial intelligence on global employment, labor rights, and economic structures. Participate in building a world where human dignity prevails.",
+        petition: "Sign the petition to demand UBI in the face of AI automation. Every signature matters.",
+        signup: "Join the Human Defence DAO. Enter your email and take part in building decentralized humanity-centered governance."
+      },
+      es: {
+        newsTitle: "RÍO DE NOTICIAS",
+        newsSubtitle: "UN FLUJO DE EVENTOS GLOBALES EN TIEMPO REAL",
+        manifesto: "Creemos en la defensa descentralizada de la humanidad, la integridad de la información y la acción democrática. HDEF.INFO no es solo una plataforma — es un movimiento. Lee, actúa, organiza.",
+        ai: "Explora el creciente impacto de la inteligencia artificial en el empleo global, los derechos laborales y las estructuras económicas.",
+        petition: "Firma la petición por una renta básica universal frente a la automatización por IA.",
+        signup: "Únete a Human Defence DAO. Introduce tu email y participa en la construcción de una gobernanza descentralizada centrada en el ser humano."
+      },
+      ru: {
+        newsTitle: "РЕКА НОВОСТЕЙ",
+        newsSubtitle: "ПОТОК МИРОВЫХ СОБЫТИЙ В РЕАЛЬНОМ ВРЕМЕНИ",
+        manifesto: "Мы верим в децентрализованную защиту человечества, информационную целостность и демократическое действие. HDEF.INFO — это не просто платформа, это движение.",
+        ai: "Изучите влияние ИИ на глобальный рынок труда и экономику. Примите участие в построении справедливого будущего.",
+        petition: "Подпишите петицию за Базовый Доход в эпоху ИИ. Каждый голос важен.",
+        signup: " Присоединяйтесь HDEF Введите email и участвуйте в создании справедливой децентрализации."
+      }
+    };
+
+    const views = {
+      news: () => `
+        <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+          ${translations[lang].newsTitle}<br/>
+          ${translations[lang].newsSubtitle}
+        </h1>
+        <div class="mt-12 mx-auto w-full max-w-md">
+          <input type="text" placeholder="YOU CAN HELP US"
+            class="w-full px-4 py-3 text-black rounded-full outline-none border-none"/>
+        </div>
+      `,
+      ai: () => `
+        <h1 class="text-4xl md:text-5xl font-bold">AI VS HUMAN LABOR</h1>
+        <p class="mt-6 max-w-xl mx-auto">${translations[lang].ai}</p>
+        <div class="mt-8">
+          <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXJxanMydnZwaDkzd3JiaTB5OWpwZmtzMW5jbGVxZW00ZWF0ZXk1ZCZlcD12MV8zNzVjZTZxYzZ2d2g4aGoybWpnODdvYnZobGZsb2FzZDFoZmxlbzJ2Z3NyMmtiNSZjdD1n/F9hQLAVhWnL56/giphy.gif" alt="AI gif" class="mx-auto rounded-lg shadow-md max-w-md">
+        </div>
+      `,
+      manifesto: () => `
+        <h1 class="text-4xl md:text-5xl font-bold">MANIFESTO</h1>
+        <p class="mt-6 max-w-xl mx-auto">${translations[lang].manifesto}</p>
+      `,
+      petition: () => `
+        <h1 class="text-3xl md:text-4xl font-bold">PETITION</h1>
+        <p class="mt-6 max-w-xl mx-auto">${translations[lang].petition}</p>
+        <button class="mt-8 bg-red-600 px-6 py-2 rounded-full font-bold hover:bg-red-800">Sign Now</button>
+      `,
+      signup: () => `
+        <h1 class="text-3xl md:text-4xl font-bold">JOIN DAO</h1>
+        <p class="mt-6 max-w-xl mx-auto">${translations[lang].signup}</p>
+        <form class="mt-6 max-w-sm mx-auto">
+          <input type="email" required placeholder="you@example.com" class="w-full px-4 py-2 text-black rounded-full outline-none">
+          <button type="submit" class="mt-4 w-full bg-white text-black px-4 py-2 rounded-full font-bold">Join</button>
+        </form>
+      `
+    };
+
+    function switchView(view) {
+      document.getElementById('view').innerHTML = views[view]();
+    }
+
+    function setLang(newLang) {
+      lang = newLang;
+      switchView(currentView);
+    }
+
+    let currentView = 'news';
+    function switchView(view) {
+      currentView = view;
+      document.getElementById('view').innerHTML = views[view]();
+    }
+
+    // Default view
+    switchView(currentView);
+  </script>
 
 </body>
 </html>
