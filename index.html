@@ -3,165 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HDEF DAO</title>
+  <title>HDEF.INFO – Human Defence DAO</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <style>
     body {
-      margin: 0;
-      background: #0d1d1d;
-      font-family: sans-serif;
-      color: #eee;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      font-family: 'Arial', sans-serif;
     }
-
-    header, footer {
-      width: 100%;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #000;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    .btn {
-      background: #2563eb;
-      color: white;
-      border: none;
-      padding: 0.6rem 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    .btn.small {
-      font-size: 0.9rem;
-      margin: 0.25rem;
-      padding: 0.4rem 0.8rem;
-    }
-
-    main {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-      gap: 2rem;
-      min-height: 80vh;
-    }
-
-    .card {
-      background: #111;
-      border-radius: 12px;
-      padding: 1.5rem;
-      max-width: 300px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    }
-
-    .card.centerpiece {
-      background: #000;
-      padding: 2rem;
-      text-align: center;
-      max-width: 480px;
-      border: 2px solid #1f2937;
-    }
-
-    .card.centerpiece h1 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
-
-    .card.centerpiece p {
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .reactions {
-      display: flex;
-      justify-content: space-around;
-      margin-top: 1rem;
-    }
-
-    .reactions button {
-      background: #222;
-      color: #fff;
-      padding: 0.5rem;
-      border-radius: 8px;
-      border: 1px solid #444;
-      cursor: pointer;
-    }
-
-    .reactions button:hover {
-      background: #333;
-    }
-
-    .tag {
-      color: #60a5fa;
-      font-size: 0.8rem;
-      margin-bottom: 0.5rem;
-    }
-
-    footer {
-      justify-content: center;
-    }
-
-    .section-links {
-      margin-top: 2rem;
-      text-align: center;
-    }
-
-    .section-links a {
-      color: #60a5fa;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .section-links a:hover {
-      text-decoration: underline;
+    .rainbow {
+      background: conic-gradient(red, orange, yellow, green, blue, indigo, violet);
     }
   </style>
 </head>
-<body>
-  <header>
-    <div class="logo">HDEF DAO</div>
-    <button class="btn">SIGN IN</button>
+<body class="bg-black text-white">
+
+  <!-- Top Navigation -->
+  <header class="flex flex-wrap justify-between items-center p-4 border-b border-white text-sm">
+    <div class="flex flex-wrap items-center gap-2">
+      <button class="bg-white text-black px-2 py-1 rounded-full font-bold">Human Defence DAO</button>
+      <button class="bg-gray-800 px-2 py-1 rounded-full">News</button>
+      <button class="bg-gray-800 px-2 py-1 rounded-full">AI vs Human Labor</button>
+      <button class="bg-gray-800 px-2 py-1 rounded-full">Manifesto</button>
+    </div>
+    <div class="flex items-center gap-2 mt-2 md:mt-0">
+      <button class="border border-white px-2 py-1 rounded-full">EN</button>
+      <button class="border border-white px-2 py-1 rounded-full">ES</button>
+      <button class="border border-white px-2 py-1 rounded-full">RU</button>
+      <button class="bg-white text-black px-3 py-1 rounded-full font-bold">DAO Sign-up</button>
+    </div>
   </header>
 
-  <main>
-    <div class="card">
-      <h2>LIBERATION FOR POLITICAL PRISONERS</h2>
-      <p class="tag"># HUMANRIGHTS</p>
-      <p>Release of political dissidents could pave way for reforms</p>
-    </div>
-    <div id="hdef-widget-container" style="width:40vw; height:100px; overflow:hidden;"></div>
-<script src="https://bo-gavriles.github.io/hdef-widget/widget.js"></script>
+  <!-- Hero -->
+  <main class="text-center py-20 px-4">
+    <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+      NEWS RIVER<br/>
+      A REAL-TIME FEED OF GLOBAL EVENTS
+    </h1>
 
-    <div class="card centerpiece">
-      <h1>China establece límites de contaminación</h1>
-      <p>Siguiendo la tendencia mundial, China se compromete a reducir las emisiones industriales en un 20% para 2035.</p>
-      <div class="reactions">
-        <button>🧠<br><small>Quiero saber</small></button>
-        <button>🔥<br><small>Importante</small></button>
-        <button>😐<br><small>Aburrido</small></button>
-      </div>
-      <p style="margin-top:1rem; font-size:0.8rem; opacity:0.6;">#boqp</p>
-    </div>
-
-    <div class="card">
-      <h2>ARREST OF ACTIVISTS TRIGGERS PROTESTS</h2>
-      <p class="tag"># PROTESTS</p>
-      <p>Are the protests justified?</p>
-      <div class="buttons">
-        <button class="btn small">YES</button>
-        <button class="btn small">NO</button>
-      </div>
+    <div class="mt-12 mx-auto w-full max-w-md">
+      <input type="text" placeholder="YOU CAN HELP US"
+        class="w-full px-4 py-3 text-black rounded-full outline-none border-none"/>
     </div>
   </main>
 
-  <div class="section-links">
-    <a href="#"
+  <!-- Rainbow -->
+  <div class="fixed bottom-0 right-0 w-40 h-40 rounded-full overflow-hidden">
+    <div class="w-full h-full rainbow opacity-90"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center text-xs text-gray-400 py-6">
+    © 2025 HDEF.INFO — Defending Humanity with Decentralized Action
+  </footer>
+
+</body>
+</html>
