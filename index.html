@@ -7,9 +7,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <style>
     body { font-family: 'Arial', sans-serif; }
-    .rainbow {
-      background: conic-gradient(red, orange, yellow, green, blue, indigo, violet);
-    }
   </style>
 </head>
 <body class="bg-black text-white">
@@ -18,11 +15,10 @@
   <header class="flex flex-wrap justify-between items-center p-4 border-b border-white text-sm">
     <div class="flex flex-wrap items-center gap-2">
       <button class="bg-white text-black px-2 py-1 rounded-full font-bold">Human Defence DAO</button>
-      <button onclick="switchView('news')" class="bg-gray-600 px-2 py-1 rounded-full">News</button>
-      <button onclick="switchView('ai')" class="bg-gray-600 px-2 py-1 rounded-full">AI</button>
-      <button onclick="switchView('manifesto')" class="bg-gray-600 px-2 py-1 rounded-full">Manifesto</button>
-      <button onclick="switchView('petition')" class="bg-gray-600 px-2 py-1 rounded-full">Petition</button>
-      <button onclick="switchView('signup')" class="bg-gray-600 px-2 py-1 rounded-full">Join</button>
+      <button id="nav-news" onclick="switchView('news')" class="bg-gray-600 px-2 py-1 rounded-full">News</button>
+      <button id="nav-ai" onclick="switchView('ai')" class="bg-gray-600 px-2 py-1 rounded-full">AI</button>
+      <button id="nav-manifesto" onclick="switchView('manifesto')" class="bg-gray-600 px-2 py-1 rounded-full">Manifesto</button>
+            <button id="nav-signup" onclick="switchView('signup')" class="bg-gray-600 px-2 py-1 rounded-full">Join</button>
     </div>
     <div class="flex items-center gap-2 mt-2 md:mt-0">
       <button onclick="document.body.classList.remove('bg-white', 'text-black'); document.body.classList.add('bg-black', 'text-white');" class="bg-black text-white border border-white px-2 py-1 rounded-full text-xs">🌙 Dark</button>
@@ -62,24 +58,24 @@
         newsSubtitle: "A REAL-TIME FEED OF GLOBAL EVENTS",
         manifesto: "We believe in decentralized defense of humanity, information integrity, and democratic action. HDEF.INFO is not just a platform — it's a movement. Read, act, organize.",
         ai: "Explore the growing impact of artificial intelligence on global employment, labor rights, and economic structures. Participate in building a world where human dignity prevails.",
-        petition: "✍️ Sign the petition to demand UBI in the face of AI automation. Every signature matters.",
-        signup: "🚀 Join the Human Defence DAO. Enter your email and take part in building decentralized humanity-centered governance."
+        petition: " Sign the petition to demand UBI in the face of AI automation. Every signature matters.",
+        signup: " Join the Human Defence DAO. Enter your email and take part in building decentralized humanity-centered governance."
       },
       es: {
         newsTitle: "RÍO DE NOTICIAS",
         newsSubtitle: "UN FLUJO DE EVENTOS GLOBALES EN TIEMPO REAL",
         manifesto: "Creemos en la defensa descentralizada de la humanidad, la integridad de la información y la acción democrática. HDEF.INFO no es solo una plataforma — es un movimiento. Lee, actúa, organiza.",
         ai: "Explora el creciente impacto de la inteligencia artificial en el empleo global, los derechos laborales y las estructuras económicas.",
-        petition: "✍️ Firma la petición por una renta básica universal frente a la automatización por IA.",
-        signup: "🚀 Únete a Human Defence DAO. Introduce tu email y participa en la construcción de una gobernanza descentralizada centrada en el ser humano."
+        petition: "Firma la petición por una renta básica universal frente a la automatización por IA.",
+        signup: " Únete a Human Defence DAO. Introduce tu email y participa en la construcción de una gobernanza descentralizada centrada en el ser humano."
       },
       ru: {
         newsTitle: "РЕКА НОВОСТЕЙ",
         newsSubtitle: "ПОТОК МИРОВЫХ СОБЫТИЙ В РЕАЛЬНОМ ВРЕМЕНИ",
         manifesto: "Мы верим в децентрализованную защиту человечества, информационную целостность и демократическое действие. HDEF.INFO — это не просто платформа, это движение.",
         ai: "Изучите влияние ИИ на глобальный рынок труда и экономику. Примите участие в построении справедливого будущего.",
-        petition: "✍️ Подпишите петицию за Базовый Доход в эпоху ИИ. Каждый голос важен.",
-        signup: "🚀 Присоединяйтесь к DAO Защиты Человека. Введите email и участвуйте в создании справедливой децентрализации."
+        petition: "Подпишите петицию за Базовый Доход в эпоху ИИ. Каждый голос важен.",
+        signup: "Присоединяйтесь к DAO Защиты Человека. Введите email и участвуйте в создании справедливой децентрализации."
       }
     };
 
@@ -123,17 +119,30 @@
         const track = document.createElement('div');
         track.className = 'hdef-track';
 
-        const content = {
-          ru: [
-            ["трамп и Маск вступили в схватку", "трамп пообещал лишить космические проекты олигарха контрактов. маск предрёк рецессию.", "#Трамп #Маск #Рецессия"]
-          ],
-          en: [
-            ["Trump vs Musk", "Trump vows to strip Musk’s contracts. Musk predicts recession.", "#Trump #Musk #Recession"]
-          ],
-          es: [
-            ["Trump y Musk chocan", "Trump amenaza a Musk. Musk predice recesión.", "#Trump #Musk #Recesión"]
-          ]
-        };
+const content = {
+  ru: [
+    ["Трамп и Маск вступили в схватку", "Трамп пообещал лишить космические проекты Маска контрактов. Маск предрёк рецессию и потребовал импичмента.", "#Трамп #Маск #SpaceX #Импичмент #Рецессия #США"],
+    ["Дугин о расплате олигархов", "«Если у нас олигарх ссорится с главным — будет вышивать тапочки».", "#Дугин #Олигархи #Сатира #Россия"],
+    ["Мерц подарил Трампу свидетельство деда", "Поблагодарил за разгром Гитлера, признал зависимость Германии от США.", "#Германия #Трамп #США #История"],
+    ["Трамп сравнил Путина и Зеленского с детьми", "По его мнению, конфликт можно урегулировать. В противном случае — жёсткие санкции.", "#Трамп #Путин #Зеленский #Украина #Россия #Санкции"],
+    ["Меркель — ключ к единству Запада", "НАТО одобрила перевооружение и безопасность Балтики.", "#Меркель #НАТО #Запад #Оборона #Балтика"]
+  ],
+  en: [
+    ["Trump vs Musk", "Trump vowed to strip Musk’s space projects of state contracts. Musk predicted a recession and called for impeachment.", "#Trump #Musk #SpaceX #Impeachment #Recession #USA"],
+    ["Dugin on oligarchs' fate", "‘If an oligarch fights the top boss here — he’ll be sewing slippers in jail.’", "#Dugin #Oligarchs #Satire #Russia"],
+    ["Merz gives Trump a gift", "Thanked him for defeating Hitler, admitted Germany depends on the US.", "#Germany #Trump #USA #History"],
+    ["Trump: Putin and Zelensky are like kids", "He believes the conflict can be resolved, or else sanctions will hit both sides.", "#Trump #Putin #Zelensky #Ukraine #Russia #Sanctions"],
+    ["Merkel as West’s key", "NATO approves massive rearmament and Baltic Sea defense pact.", "#Merkel #NATO #West #Defense #Baltic"]
+  ],
+  es: [
+    ["Trump y Musk chocan", "Trump amenaza con quitarle a Musk sus contratos. Musk predice recesión y pide juicio político.", "#Trump #Musk #SpaceX #JuicioPolítico #Recesión #EEUU"],
+    ["Dugin sobre los oligarcas", "‘Si un oligarca se pelea con el jefe, terminará bordando pantuflas en la cárcel’.", "#Dugin #Oligarcas #Sátira #Rusia"],
+    ["Merz le regala a Trump un certificado", "Le agradece por derrotar a Hitler y admite dependencia de Alemania hacia EE.UU.", "#Alemania #Trump #EEUU #Historia"],
+    ["Trump: Putin y Zelenski son como niños", "Cree que el conflicto aún puede resolverse. Si no, habrá sanciones severas.", "#Trump #Putin #Zelenski #Ucrania #Rusia #Sanciones"],
+    ["Merkel, clave para Occidente", "La OTAN aprueba el mayor rearme desde la Guerra Fría y pacta seguridad en el Báltico.", "#Merkel #OTAN #Occidente #Defensa #Báltico"]
+  ]
+};
+
 
         const langNews = content[lang] || content['en'];
 
@@ -151,21 +160,19 @@
         document.getElementById('hdef-widget').appendChild(container);
       },
       ai: () => `
-        <h1 class="text-4xl md:text-5xl font-bold">AI VS HUMAN LABOR</h1>
+        <h1 class="text-4xl md:text-5xl font-bold">AI VS HUMAN LABOR + PETITION</h1>
         <p class="mt-6 max-w-xl mx-auto">${translations[lang].ai}</p>
         <div class="mt-8">
           <img src="https://media.giphy.com/media/F9hQLAVhWnL56/giphy.gif" alt="AI gif" class="mx-auto rounded-lg shadow-md max-w-md">
         </div>
+        <p class="mt-10 max-w-xl mx-auto">${translations[lang].petition}</p>
+        <button class="mt-4 bg-red-600 px-6 py-2 rounded-full font-bold hover:bg-red-800">✍️ Sign Now</button>
       `,
       manifesto: () => `
         <h1 class="text-4xl md:text-5xl font-bold">MANIFESTO</h1>
         <p class="mt-6 max-w-xl mx-auto">${translations[lang].manifesto}</p>
       `,
-      petition: () => `
-        <h1 class="text-3xl md:text-4xl font-bold">PETITION</h1>
-        <p class="mt-6 max-w-xl mx-auto">${translations[lang].petition}</p>
-        <button class="mt-8 bg-red-600 px-6 py-2 rounded-full font-bold hover:bg-red-800">✍️ Sign Now</button>
-      `,
+      petition: () => views.ai(),
       signup: () => `
         <h1 class="text-3xl md:text-4xl font-bold">JOIN DAO</h1>
         <p class="mt-6 max-w-xl mx-auto">${translations[lang].signup}</p>
@@ -177,6 +184,13 @@
     };
 
     function switchView(view) {
+      // Update active nav button styling
+      ['news','ai','manifesto','petition','signup'].forEach(id => {
+        const btn = document.getElementById(`nav-${id}`);
+        if (btn) btn.classList.remove('bg-white', 'text-black');
+      });
+      const activeBtn = document.getElementById(`nav-${view}`);
+      if (activeBtn) activeBtn.classList.add('bg-white', 'text-black');
       currentView = view;
       if (typeof views[view] === 'function') {
         document.getElementById('view').innerHTML = '';
