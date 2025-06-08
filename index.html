@@ -52,33 +52,41 @@
     let lang = 'en';
     let currentView = 'news';
 
-    const translations = {
-      en: {
-        newsTitle: "NEWS RIVER",
-        newsSubtitle: "A REAL-TIME FEED OF GLOBAL EVENTS",
-        manifesto: "We believe in decentralized defense of humanity, information integrity, and democratic action. HDEF.INFO is not just a platform — it's a movement. Read, act, organize.",
-        ai: "Explore the growing impact of artificial intelligence on global employment, labor rights, and economic structures. Participate in building a world where human dignity prevails.",
-        petition: " Sign the petition to demand UBI in the face of AI automation. Every signature matters.",
-        signup: " Join the Human Defence DAO. Enter your email and take part in building decentralized humanity-centered governance."
-      },
-      es: {
-        newsTitle: "RÍO DE NOTICIAS",
-        newsSubtitle: "UN FLUJO DE EVENTOS GLOBALES EN TIEMPO REAL",
-        manifesto: "Creemos en la defensa descentralizada de la humanidad, la integridad de la información y la acción democrática. HDEF.INFO no es solo una plataforma — es un movimiento. Lee, actúa, organiza.",
-        ai: "Explora el creciente impacto de la inteligencia artificial en el empleo global, los derechos laborales y las estructuras económicas.",
-        petition: "Firma la petición por una renta básica universal frente a la automatización por IA.",
-        signup: " Únete a Human Defence DAO. Introduce tu email y participa en la construcción de una gobernanza descentralizada centrada en el ser humano."
-      },
-      ru: {
-        newsTitle: "РЕКА НОВОСТЕЙ",
-        newsSubtitle: "ПОТОК МИРОВЫХ СОБЫТИЙ В РЕАЛЬНОМ ВРЕМЕНИ",
-        manifesto: "Мы верим в децентрализованную защиту человечества, информационную целостность и демократическое действие. HDEF.INFO — это не просто платформа, это движение.",
-        ai: "Изучите влияние ИИ на глобальный рынок труда и экономику. Примите участие в построении справедливого будущего.",
-        petition: "Подпишите петицию за Базовый Доход в эпоху ИИ. Каждый голос важен.",
-        signup: "Присоединяйтесь к DAO Защиты Человека. Введите email и участвуйте в создании справедливой децентрализации."
-      }
-    };
-
+const translations = {
+  en: {
+    newsIntro: {
+      title: "Stay Informed, Stay Human",
+      desc: "It's not just news — it's real-time understanding of the global situation. Follow us wherever it's convenient for you.",
+      below: "or read here — fresh updates every day"
+    },
+    manifesto: "We believe in decentralized defense of humanity, information integrity, and democratic action. HDEF.INFO is not just a platform — it's a movement. Read, act, organize.",
+    ai: "Explore the growing impact of artificial intelligence on global employment, labor rights, and economic structures. Participate in building a world where human dignity prevails.",
+    petition: " Sign the petition to demand UBI in the face of AI automation. Every signature matters.",
+    signup: " Join the Human Defence DAO. Enter your email and take part in building decentralized humanity-centered governance."
+  },
+  es: {
+    newsIntro: {
+      title: "Mantente informado, mantente humano",
+      desc: "No son solo noticias — es comprender la situación mundial en tiempo real. Síguenos donde te quede cómodo.",
+      below: "o léelo aquí — cada día contenido nuevo"
+    },
+    manifesto: "Creemos en la defensa descentralizada de la humanidad, la integridad de la información y la acción democrática. HDEF.INFO no es solo una plataforma — es un movimiento. Lee, actúa, organiza.",
+    ai: "Explora el creciente impacto de la inteligencia artificial en el empleo global, los derechos laborales y las estructuras económicas.",
+    petition: "Firma la petición por una renta básica universal frente a la automatización por IA.",
+    signup: " Únete a Human Defence DAO. Introduce tu email y participa en la construcción de una gobernanza descentralizada centrada en el ser humano."
+  },
+  ru: {
+    newsIntro: {
+      title: "Будь в курсе — останься человеком",
+      desc: "Это не просто новости — это понимание мировой ситуации в реальном времени. Следи с нами там, где тебе удобно.",
+      below: "или читай здесь, каждый день свежие"
+    },
+    manifesto: "Мы верим в децентрализованную защиту человечества, информационную целостность и демократическое действие. HDEF.INFO — это не просто платформа, это движение.",
+    ai: "Изучите влияние ИИ на глобальный рынок труда и экономику. Примите участие в построении справедливого будущего.",
+    petition: "Подпишите петицию за Базовый Доход в эпоху ИИ. Каждый голос важен.",
+    signup: "Присоединяйтесь к DAO Защиты Человека. Введите email и участвуйте в создании справедливой децентрализации."
+  }
+};
     const views = {
       news: () => {
         document.getElementById('view').innerHTML = `
