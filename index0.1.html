@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HDEF DAO</title>
+  <style>
+    body {
+      margin: 0;
+      background: #0d1d1d;
+      font-family: sans-serif;
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header, footer {
+      width: 100%;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .btn {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .btn.small {
+      font-size: 0.9rem;
+      margin: 0.25rem;
+      padding: 0.4rem 0.8rem;
+    }
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      gap: 2rem;
+      min-height: 80vh;
+    }
+
+    .card {
+      background: #111;
+      border-radius: 12px;
+      padding: 1.5rem;
+      max-width: 300px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .card.centerpiece {
+      background: #000;
+      padding: 2rem;
+      text-align: center;
+      max-width: 480px;
+      border: 2px solid #1f2937;
+    }
+
+    .card.centerpiece h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .card.centerpiece p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .reactions {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 1rem;
+    }
+
+    .reactions button {
+      background: #222;
+      color: #fff;
+      padding: 0.5rem;
+      border-radius: 8px;
+      border: 1px solid #444;
+      cursor: pointer;
+    }
+
+    .reactions button:hover {
+      background: #333;
+    }
+
+    .tag {
+      color: #60a5fa;
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      justify-content: center;
+    }
+
+    .section-links {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .section-links a {
+      color: #60a5fa;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .section-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">HDEF DAO</div>
+    <button class="btn">SIGN IN</button>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>LIBERATION FOR POLITICAL PRISONERS</h2>
+      <p class="tag"># HUMANRIGHTS</p>
+      <p>Release of political dissidents could pave way for reforms</p>
+    </div>
+
+    <div class="card centerpiece">
+      <h1>China establece límites de contaminación</h1>
+      <p>Siguiendo la tendencia mundial, China se compromete a reducir las emisiones industriales en un 20% para 2035.</p>
+      <div class="reactions">
+        <button>🧠<br><small>Quiero saber</small></button>
+        <button>🔥<br><small>Importante</small></button>
+        <button>😐<br><small>Aburrido</small></button>
+      </div>
+      <p style="margin-top:1rem; font-size:0.8rem; opacity:0.6;">#boqp</p>
+    </div>
+
+    <div class="card">
+      <h2>ARREST OF ACTIVISTS TRIGGERS PROTESTS</h2>
+      <p class="tag"># PROTESTS</p>
+      <p>Are the protests justified?</p>
+      <div class="buttons">
+        <button class="btn small">YES</button>
+        <button class="btn small">NO</button>
+      </div>
+    </div>
+  </main>
+
+  <div class="section-links">
+    <a href="#"
