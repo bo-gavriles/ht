@@ -3,163 +3,217 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HDEF DAO</title>
+  <title>HDEF.INFO – Human Defence DAO</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <style>
-    body {
-      margin: 0;
-      background: #0d1d1d;
-      font-family: sans-serif;
-      color: #eee;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    header, footer {
-      width: 100%;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #000;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    .btn {
-      background: #2563eb;
-      color: white;
-      border: none;
-      padding: 0.6rem 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    .btn.small {
-      font-size: 0.9rem;
-      margin: 0.25rem;
-      padding: 0.4rem 0.8rem;
-    }
-
-    main {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-      gap: 2rem;
-      min-height: 80vh;
-    }
-
-    .card {
-      background: #111;
-      border-radius: 12px;
-      padding: 1.5rem;
-      max-width: 300px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    }
-
-    .card.centerpiece {
-      background: #000;
-      padding: 2rem;
-      text-align: center;
-      max-width: 480px;
-      border: 2px solid #1f2937;
-    }
-
-    .card.centerpiece h1 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
-
-    .card.centerpiece p {
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .reactions {
-      display: flex;
-      justify-content: space-around;
-      margin-top: 1rem;
-    }
-
-    .reactions button {
-      background: #222;
-      color: #fff;
-      padding: 0.5rem;
-      border-radius: 8px;
-      border: 1px solid #444;
-      cursor: pointer;
-    }
-
-    .reactions button:hover {
-      background: #333;
-    }
-
-    .tag {
-      color: #60a5fa;
-      font-size: 0.8rem;
-      margin-bottom: 0.5rem;
-    }
-
-    footer {
-      justify-content: center;
-    }
-
-    .section-links {
-      margin-top: 2rem;
-      text-align: center;
-    }
-
-    .section-links a {
-      color: #60a5fa;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .section-links a:hover {
-      text-decoration: underline;
-    }
+    body { font-family: 'Arial', sans-serif; }
   </style>
 </head>
-<body>
-  <header>
-    <div class="logo">HDEF DAO</div>
-    <button class="btn">SIGN IN</button>
+<body class="bg-black text-white">
+
+  <!-- Top Navigation -->
+  <header class="flex flex-wrap justify-between items-center p-4 border-b border-white text-sm">
+<div class="flex flex-wrap items-center gap-2">
+  <button class="bg-white text-black px-2 py-1 rounded-full font-bold">Human Defence DAO</button>
+  <button id="nav-news" onclick="switchView('news')" class="bg-gray-600 px-2 py-1 rounded-full">World news</button>
+  <button id="nav-ai" onclick="switchView('ai')" class="bg-gray-600 px-2 py-1 rounded-full">Petition-AI</button>
+  <button id="nav-manifesto" onclick="switchView('manifesto')" class="bg-gray-600 px-2 py-1 rounded-full">Manifesto</button>
+  <button id="nav-signup" onclick="switchView('signup')" class="bg-gray-600 px-2 py-1 rounded-full">Join DAO</button>
+    </div>
+    <div class="flex items-center gap-2 mt-2 md:mt-0">
+      <button onclick="document.body.classList.remove('bg-white', 'text-black'); document.body.classList.add('bg-black', 'text-white');" class="bg-black text-white border border-white px-2 py-1 rounded-full text-xs">🌙 Dark</button>
+      <button onclick="document.body.classList.remove('bg-black', 'text-white'); document.body.classList.add('bg-white', 'text-black');" class="bg-white text-black border border-black px-2 py-1 rounded-full text-xs">☀️ Light</button>
+      <button onclick="setLang('en')" class="border border-white px-2 py-1 rounded-full">EN</button>
+      <button onclick="setLang('es')" class="border border-white px-2 py-1 rounded-full">ES</button>
+      <button onclick="setLang('ru')" class="border border-white px-2 py-1 rounded-full">RU</button>
+    </div>
   </header>
 
-  <main>
-    <div class="card">
-      <h2>LIBERATION FOR POLITICAL PRISONERS</h2>
-      <p class="tag"># HUMANRIGHTS</p>
-      <p>Release of political dissidents could pave way for reforms</p>
-    </div>
-
-    <div class="card centerpiece">
-      <h1>China establece límites de contaminación</h1>
-      <p>Siguiendo la tendencia mundial, China se compromete a reducir las emisiones industriales en un 20% para 2035.</p>
-      <div class="reactions">
-        <button>🧠<br><small>Quiero saber</small></button>
-        <button>🔥<br><small>Importante</small></button>
-        <button>😐<br><small>Aburrido</small></button>
-      </div>
-      <p style="margin-top:1rem; font-size:0.8rem; opacity:0.6;">#boqp</p>
-    </div>
-
-    <div class="card">
-      <h2>ARREST OF ACTIVISTS TRIGGERS PROTESTS</h2>
-      <p class="tag"># PROTESTS</p>
-      <p>Are the protests justified?</p>
-      <div class="buttons">
-        <button class="btn small">YES</button>
-        <button class="btn small">NO</button>
-      </div>
-    </div>
+  <!-- Central View -->
+  <main id="view" class="text-center py-20 px-4">
+    <!-- Loaded dynamically -->
   </main>
 
-  <div class="section-links">
-    <a href="#"
+  <!-- Rainbow Element -->
+  <div class="fixed bottom-0 right-0 w-40 h-40 rounded-full overflow-hidden">
+    <div class="w-full h-full rainbow opacity-90"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center text-xs text-gray-400 py-6">
+    © 2025 HDEF.INFO — Defending Humanity with Decentralized Action
+  </footer>
+
+  <!-- EMBED WIDGET -->
+  <script src="hdef-widget.js"></script>
+
+  <!-- Scripts -->
+  <script>
+    let lang = 'en';
+    let currentView = 'news';
+
+const translations = {
+  en: {
+    newsIntro: {
+      title: "Stay Informed, Stay Human",
+      desc: "It's not just news — it's real-time understanding of the global situation. Follow us wherever it's convenient for you.",
+      below: "or read here — fresh updates every day"
+    },
+    manifesto: "We believe in decentralized defense of humanity, information integrity, and democratic action. HDEF.INFO is not just a platform — it's a movement. Read, act, organize.",
+    ai: "Explore the growing impact of artificial intelligence on global employment, labor rights, and economic structures. Participate in building a world where human dignity prevails.",
+    petition: " Sign the petition to demand UBI in the face of AI automation. Every signature matters.",
+    signup: " Join the Human Defence DAO. Enter your email and take part in building decentralized humanity-centered governance."
+  },
+  es: {
+    newsIntro: {
+      title: "Mantente informado, mantente humano",
+      desc: "No son solo noticias — es comprender la situación mundial en tiempo real. Síguenos donde te quede cómodo.",
+      below: "o léelo aquí — cada día contenido nuevo"
+    },
+    manifesto: "Creemos en la defensa descentralizada de la humanidad, la integridad de la información y la acción democrática. HDEF.INFO no es solo una plataforma — es un movimiento. Lee, actúa, organiza.",
+    ai: "Explora el creciente impacto de la inteligencia artificial en el empleo global, los derechos laborales y las estructuras económicas.",
+    petition: "Firma la petición por una renta básica universal frente a la automatización por IA.",
+    signup: " Únete a Human Defence DAO. Introduce tu email y participa en la construcción de una gobernanza descentralizada centrada en el ser humano."
+  },
+  ru: {
+    newsIntro: {
+      title: "Будь в курсе — останься человеком",
+      desc: "Это не просто новости — это понимание мировой ситуации в реальном времени. Следи с нами там, где тебе удобно.",
+      below: "или читай здесь, каждый день свежие"
+    },
+    manifesto: "Мы верим в децентрализованную защиту человечества, информационную целостность и демократическое действие. HDEF.INFO — это не просто платформа, это движение.",
+    ai: "Изучите влияние ИИ на глобальный рынок труда и экономику. Примите участие в построении справедливого будущего.",
+    petition: "Подпишите петицию за Базовый Доход в эпоху ИИ. Каждый голос важен.",
+    signup: "Присоединяйтесь к DAO Защиты Человека. Введите email и участвуйте в создании справедливой децентрализации."
+  }
+};
+    const views = {
+      news: () => {
+        document.getElementById('view').innerHTML = `
+          <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-8">
+            ${translations[lang].newsTitle}<br/>
+            ${translations[lang].newsSubtitle}
+          </h1>
+          <div id="hdef-widget" class="flex justify-center"></div>
+        `;
+
+        const style = document.createElement('style');
+        style.textContent = `
+          .hdef-track {
+            display: flex;
+            animation: hdef-scroll 60s linear infinite;
+            gap: 1rem;
+          }
+          @keyframes hdef-scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+          }
+          .hdef-card {
+            flex: 0 0 auto;
+            min-width: 280px;
+            background: rgba(255,255,255,0.8);
+            color: #000;
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-left: 4px solid #6200ee;
+          }
+          .hdef-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+          .hdef-card p { font-size: 0.9rem; margin-bottom: 0.2rem; }
+          .hdef-tags { font-size: 0.75rem; color: #555; }
+        `;
+        document.head.appendChild(style);
+
+        const track = document.createElement('div');
+        track.className = 'hdef-track';
+
+const content = {
+  ru: [
+    ["Трамп и Маск вступили в схватку", "Трамп пообещал лишить космические проекты Маска контрактов. Маск предрёк рецессию и потребовал импичмента.", "#Трамп #Маск #SpaceX #Импичмент #Рецессия #США"],
+    ["Дугин о расплате олигархов", "«Если у нас олигарх ссорится с главным — будет вышивать тапочки».", "#Дугин #Олигархи #Сатира #Россия"],
+    ["Мерц подарил Трампу свидетельство деда", "Поблагодарил за разгром Гитлера, признал зависимость Германии от США.", "#Германия #Трамп #США #История"],
+    ["Трамп сравнил Путина и Зеленского с детьми", "По его мнению, конфликт можно урегулировать. В противном случае — жёсткие санкции.", "#Трамп #Путин #Зеленский #Украина #Россия #Санкции"],
+    ["Меркель — ключ к единству Запада", "НАТО одобрила перевооружение и безопасность Балтики.", "#Меркель #НАТО #Запад #Оборона #Балтика"]
+  ],
+  en: [
+    ["Trump vs Musk", "Trump vowed to strip Musk’s space projects of state contracts. Musk predicted a recession and called for impeachment.", "#Trump #Musk #SpaceX #Impeachment #Recession #USA"],
+    ["Dugin on oligarchs' fate", "‘If an oligarch fights the top boss here — he’ll be sewing slippers in jail.’", "#Dugin #Oligarchs #Satire #Russia"],
+    ["Merz gives Trump a gift", "Thanked him for defeating Hitler, admitted Germany depends on the US.", "#Germany #Trump #USA #History"],
+    ["Trump: Putin and Zelensky are like kids", "He believes the conflict can be resolved, or else sanctions will hit both sides.", "#Trump #Putin #Zelensky #Ukraine #Russia #Sanctions"],
+    ["Merkel as West’s key", "NATO approves massive rearmament and Baltic Sea defense pact.", "#Merkel #NATO #West #Defense #Baltic"]
+  ],
+  es: [
+    ["Trump y Musk chocan", "Trump amenaza con quitarle a Musk sus contratos. Musk predice recesión y pide juicio político.", "#Trump #Musk #SpaceX #JuicioPolítico #Recesión #EEUU"],
+    ["Dugin sobre los oligarcas", "‘Si un oligarca se pelea con el jefe, terminará bordando pantuflas en la cárcel’.", "#Dugin #Oligarcas #Sátira #Rusia"],
+    ["Merz le regala a Trump un certificado", "Le agradece por derrotar a Hitler y admite dependencia de Alemania hacia EE.UU.", "#Alemania #Trump #EEUU #Historia"],
+    ["Trump: Putin y Zelenski son como niños", "Cree que el conflicto aún puede resolverse. Si no, habrá sanciones severas.", "#Trump #Putin #Zelenski #Ucrania #Rusia #Sanciones"],
+    ["Merkel, clave para Occidente", "La OTAN aprueba el mayor rearme desde la Guerra Fría y pacta seguridad en el Báltico.", "#Merkel #OTAN #Occidente #Defensa #Báltico"]
+  ]
+};
+
+
+        const langNews = content[lang] || content['en'];
+
+        langNews.forEach(([title, desc, tags]) => {
+          const card = document.createElement('div');
+          card.className = 'hdef-card';
+          card.innerHTML = `<h3>${title}</h3><p>${desc}</p><p class='hdef-tags'>${tags}</p>`;
+          track.appendChild(card);
+        });
+
+        const container = document.createElement('div');
+        container.className = 'overflow-hidden w-full max-w-5xl mx-auto';
+        container.appendChild(track);
+
+        document.getElementById('hdef-widget').appendChild(container);
+      },
+      ai: () => `
+        <h1 class="text-4xl md:text-5xl font-bold">AI VS HUMAN LABOR + PETITION</h1>
+        <p class="mt-6 max-w-xl mx-auto">${translations[lang].ai}</p>
+        <div class="mt-8">
+          <img src="https://media.giphy.com/media/F9hQLAVhWnL56/giphy.gif" alt="AI gif" class="mx-auto rounded-lg shadow-md max-w-md">
+        </div>
+        <p class="mt-10 max-w-xl mx-auto">${translations[lang].petition}</p>
+        <button class="mt-4 bg-red-600 px-6 py-2 rounded-full font-bold hover:bg-red-800">✍️ Sign Now</button>
+      `,
+      manifesto: () => `
+        <h1 class="text-4xl md:text-5xl font-bold">MANIFESTO</h1>
+        <p class="mt-6 max-w-xl mx-auto">${translations[lang].manifesto}</p>
+      `,
+      petition: () => views.ai(),
+      signup: () => `
+        <h1 class="text-3xl md:text-4xl font-bold">JOIN DAO</h1>
+        <p class="mt-6 max-w-xl mx-auto">${translations[lang].signup}</p>
+        <form class="mt-6 max-w-sm mx-auto">
+          <input type="email" required placeholder="you@example.com" class="w-full px-4 py-2 text-black rounded-full outline-none">
+          <button type="submit" class="mt-4 w-full bg-white text-black px-4 py-2 rounded-full font-bold">Join</button>
+        </form>
+      `
+    };
+
+    function switchView(view) {
+      // Update active nav button styling
+      ['news','ai','manifesto','petition','signup'].forEach(id => {
+        const btn = document.getElementById(`nav-${id}`);
+        if (btn) btn.classList.remove('bg-white', 'text-black');
+      });
+      const activeBtn = document.getElementById(`nav-${view}`);
+      if (activeBtn) activeBtn.classList.add('bg-white', 'text-black');
+      currentView = view;
+      if (typeof views[view] === 'function') {
+        document.getElementById('view').innerHTML = '';
+        const html = views[view]();
+        if (typeof html === 'string') document.getElementById('view').innerHTML = html;
+      }
+    }
+
+    function setLang(newLang) {
+      lang = newLang;
+      switchView(currentView);
+    }
+
+    switchView(currentView);
+  </script>
+
+</body>
+</html>
