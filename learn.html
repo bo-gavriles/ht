@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn – HDEF.INFO</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: #0a0a0a;
+      color: #f3f3f3;
+      font-family: 'Arial', sans-serif;
+    }
+    .nav-icon {
+      width: 28px;
+      height: 28px;
+      margin-right: 0.75rem;
+    }
+    .nav-button {
+      @apply flex items-center text-lg font-semibold bg-[#edb20e] text-black px-4 py-3 rounded-lg transition hover:bg-yellow-400;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="flex flex-wrap items-center justify-between px-10 py-6 border-b border-gray-800">
+    <div class="flex items-center space-x-6">
+      <a href="index.html"><img src="img/logo.png" alt="Logo" class="h-12"></a>
+    </div>
+    <nav class="flex flex-wrap gap-5 mt-4 md:mt-0">
+      <a href="learn.html" class="nav-button">
+        <img src="img/icon_learn.png" alt="Learn" class="nav-icon"> Learn
+      </a>
+      <a href="news.html" class="nav-button">
+        <img src="img/icon_news.png" alt="News" class="nav-icon"> News
+      </a>
+      <a href="acts.html" class="nav-button">
+        <img src="img/icon_acts.png" alt="Acts" class="nav-icon"> Acts
+      </a>
+      <a href="#" class="nav-button">
+        <img src="img/icon_donate.png" alt="Donate" class="nav-icon"> Donate
+      </a>
+    </nav>
+  </header>
+
+  <!-- Intro with Image -->
+  <section class="w-full px-10 py-16 flex flex-col md:flex-row items-center gap-10">
+    <img src="img/learn_intro.png" alt="Learning Illustration" class="w-full md:w-1/2 rounded-xl shadow-xl">
+    <div class="text-center md:text-left">
+      <h1 class="text-5xl font-extrabold text-yellow-400 mb-6">/learn</h1>
+      <p class="text-xl leading-relaxed">
+        Short video courses and guides for anyone who wants to be prepared for change.<br>
+        <span class="text-yellow-400 font-semibold">Tech, AI, security, autonomy</span> — everything to help you adapt and stay aware.
+      </p>
+    </div>
+  <!-- Simple List of Resources -->
+  <section class="px-10 pb-20 max-w-3xl mx-auto space-y-6">
+    <div class="bg-gray-900 p-5 rounded-xl border border-gray-700">
+      <a href="https://ssd.eff.org/en" target="_blank" class="text-yellow-400 text-xl font-semibold hover:underline">
+        How to handle technology
+      </a>
+      <p class="text-sm text-gray-300 mt-1">Coming soon.</p>
+    </div>
+
+    <div class="bg-gray-900 p-5 rounded-xl border border-gray-700">
+      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="text-yellow-400 text-xl font-semibold hover:underline">
+        AI and You
+      </a>
+      <p class="text-sm text-gray-300 mt-1">Coming soon.</p>
+    </div>
+
+    <div class="bg-gray-900 p-5 rounded-xl border border-gray-700">
+      <a href="https://github.com/arkenfox/user.js" target="_blank" class="text-yellow-400 text-xl font-semibold hover:underline">
+        Preparing for the employment crisis
+      </a>
+      <p class="text-sm text-gray-300 mt-1">Coming soon</p>
+    </div>
+
+    <div class="bg-gray-900 p-5 rounded-xl border border-gray-700">
+      <a href="mobile-autonomy.html" class="text-yellow-400 text-xl font-semibold hover:underline">
+        You and Human rights
+      </a>
+      <p class="text-sm text-gray-300 mt-1">Coming soon</p>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="flex flex-col md:flex-row items-center justify-between px-10 py-6 border-t border-gray-800 text-base text-[#edb20e] gap-4">
+    <div class="flex gap-6">
+      <a href="https://t.me/hdef_news" target="_blank"><img src="img/icon_telegram.png" alt="Telegram" class="w-6 h-6"></a>
+      <a href="https://x.com/hdef_news" target="_blank"><img src="img/icon_twitter.png" alt="X / Twitter" class="w-6 h-6"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord" class="w-6 h-6"></a>
+    </div>
+    <div class="space-x-6">
+      <a href="#">PRIVACY</a>
+      <a href="#">CONTACT</a>
+    </div>
+  </footer>
+</body>
+</html>
