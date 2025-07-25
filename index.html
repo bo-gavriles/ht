@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HDEF.INFO – Human Defence NEWS and DAO</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: #0a0a0a;
+      color: #f3f3f3;
+      font-family: 'Arial', sans-serif;
+    }
+    .nav-icon {
+      width: 28px;
+      height: 28px;
+      margin-right: 0.75rem;
+    }
+    .nav-button {
+      @apply flex items-center text-lg font-semibold bg-[#edb20e] text-black px-4 py-3 rounded-lg transition hover:bg-yellow-400;
+    }
+    .post-tile {
+      @apply flex flex-col items-start justify-between bg-black p-6 rounded-xl transition hover:bg-gray-900 text-white min-w-[280px] max-w-[320px];
+    }
+    .post-tag-icon {
+      width: 28px;
+      height: 28px;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="flex flex-wrap items-center justify-between px-10 py-6 border-b border-gray-800">
+    <div class="flex items-center space-x-6">
+      <img src="img/logo.png" alt="Logo" class="h-12">
+      <span class="text-2xl font-extrabold bg-[#edb20e] text-black px-4 py-2 rounded"></span>
+    </div>
+    <nav class="flex flex-wrap gap-5 mt-4 md:mt-0">
+      <a href="learn.html" class="nav-button">
+        <img src="img/icon_learn.png" alt="Learn" class="nav-icon"> Learn
+      </a>
+      <a href="news.html" class="nav-button">
+        <img src="img/icon_news.png" alt="News" class="nav-icon"> News
+      </a>
+      <a href="acts.html" class="nav-button">
+        <img src="img/icon_acts.png" alt="Acts" class="nav-icon"> Acts
+      </a>
+      <a href="#" class="nav-button">
+        <img src="img/icon_donate.png" alt="Donate" class="nav-icon"> Donate
+      </a>
+    </nav>
+  </header>
+
+  <!-- Full-width intro on top -->
+  <section class="w-full text-center px-10 py-16">
+    <h1 class="text-6xl font-extrabold text-yellow-400 mb-8">HDEF.INFO – Human Defence in the Age of AI</h1>
+    <p class="max-w-4xl mx-auto text-2xl leading-relaxed">
+      A <span class="text-yellow-400 font-semibold">DAO-based media platform</span>, educational space, and global community created to defend human rights and personal autonomy in the era of artificial intelligence and systemic collapse.
+      We publish <a href="news.html" class="text-yellow-400 underline">news</a>, produce <a href="learn.html" class="text-yellow-400 underline">guides</a> and <a href="learn.html" class="text-yellow-400 underline">translations</a>, and launch <a href="acts.html" class="text-yellow-400 underline">solidarity campaigns</a>.
+    </p>
+    <p class="mt-4 text-xl">
+      <a href="join.html" class="text-yellow-400 underline">Join the DAO</a> — if you share our values, you're one of us.
+    </p>
+  </section>
+
+  <!-- Horizontal news river -->
+  <section class="w-full overflow-x-auto px-10 pb-10">
+    <h2 class="text-2xl font-bold text-yellow-400 mb-4">Latest Updates</h2>
+    <div class="flex gap-6">
+      <div class="post-tile">
+        <p class="text-base">New petition launched to support universal basic income.</p>
+        <img src="img/icon_acts.png" alt="Petition Icon" class="post-tag-icon">
+      </div>
+      <div class="post-tile">
+        <p class="text-base">This weekend in solidarity with prisoners. Letters for support.</p>
+        <img src="img/icon_letters.png" alt="Letters Icon" class="post-tag-icon">
+      </div>
+      <div class="post-tile">
+        <p class="text-base">New course on AI resistance tools now available.</p>
+        <img src="img/icon_learn.png" alt="Course Icon" class="post-tag-icon">
+      </div>
+      <div class="post-tile">
+        <p class="text-base">New donation! 0.3 ETH from DAO participant.</p>
+        <img src="img/icon_donate.png" alt="Donation Icon" class="post-tag-icon">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer with social links -->
+  <footer class="flex flex-col md:flex-row items-center justify-between px-10 py-6 border-t border-gray-800 text-base text-[#edb20e] gap-4">
+    <div class="flex gap-6">
+      <a href="https://t.me/hdef_news" target="_blank"><img src="img/icon_telegram.png" alt="Telegram" class="w-6 h-6"></a>
+      <a href="https://x.com/hdef_news" target="_blank"><img src="img/icon_twitter.png" alt="X / Twitter" class="w-6 h-6"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord" class="w-6 h-6"></a>
+    </div>
+    <div class="space-x-6">
+      <a href="#">PRIVACY</a>
+      <a href="#">CONTACT</a>
+    </div>
+  </footer>
+</body>
+</html>
