@@ -52,9 +52,10 @@
     <img src="img/base.png" alt="Learning illustration" class="w-full rounded-xl shadow-xl" />
     <div>
       <p class="kicker text-base mb-2">/LEARN</p>
-      <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Human Defence DAO — Learn & Act</h1>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Human Defence DAO — Learn & Prepare</h1>
       <p class="text-lg md:text-xl leading-relaxed text-gray-200">
-        Learn how to learn, vote, and act — and then move into building real‑world impact with HDEF roles and professions.
+        Short, practical tracks to help anyone adapt to the new reality:
+        <span class="font-semibold link-ylw">tech, AI, security, autonomy</span>. No fluff — only what helps you act.
       </p>
       <div class="mt-6 flex items-center bg-[#141414] border border-gray-800 rounded-xl pl-4 pr-2 py-2 w-full">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
@@ -63,109 +64,313 @@
       </div>
     </div>
   </section>
-
-  <!-- START HERE section remains -->
-  <section class="px-6 md:px-10 pb-10">
+  <!-- Learning Tracks with icons -->
+  <section class="px-6 md:px-10 pb-4">
     <h2 class="text-2xl font-bold mb-4 kicker">START HERE</h2>
     <div class="grid md:grid-cols-3 gap-6">
       <article class="card rounded-2xl p-5 flex flex-col items-start">
         <img src="img/stud.png" alt="Study Icon" class="course-icon" />
         <h3 class="text-xl font-bold mb-2">Base: How to learn & ask</h3>
-        <p class="text-gray-300 text-sm mb-4">Critical thinking, smart reading, asking effective questions, and learning how to work with GPT.</p>
+        <p class="text-gray-300 text-sm mb-4">Reading smart, asking good questions, using GPT effectively, and avoiding info-overload.</p>
+        <ul class="text-sm space-y-2 mb-4 list-disc pl-5 text-gray-300">
+          <li><a class="link-ylw" href="#course-gpt">How to use GPT (fast start)</a></li>
+          <li><a class="link-ylw" href="#course-questions">How to read / watch / ask questions</a></li>
+          <li><a class="link-ylw" href="#course-security">Personal security basics</a></li>
+        </ul>
+        <span class="mt-auto text-xs text-gray-500">~90 min total • beginner</span>
       </article>
+
       <article class="card rounded-2xl p-5 flex flex-col items-start">
-        <img src="img/vota.png" alt="Vote Icon" class="course-icon" />
+        <img src="img/vota.png" alt="DAO Icon" class="course-icon" />
         <h3 class="text-xl font-bold mb-2">DAO & Participation</h3>
-        <p class="text-gray-300 text-sm mb-4">Understanding how to vote, coordinate, and contribute in a decentralized system.</p>
+        <p class="text-gray-300 text-sm mb-4">What is a DAO, reputation, tasks, voting, and how HDEF works in practice.</p>
+        <ul class="text-sm space-y-2 mb-4 list-disc pl-5 text-gray-300">
+          <li><a class="link-ylw" href="#course-dao">What is DAO (plain)</a></li>
+          <li><a class="link-ylw" href="#course-reputation">Reputation & tasks</a></li>
+          <li><a class="link-ylw" href="#course-tools">Tools: Discord, forums, wallets</a></li>
+        </ul>
+        <span class="mt-auto text-xs text-gray-500">~70 min • no prior crypto needed</span>
       </article>
+
       <article class="card rounded-2xl p-5 flex flex-col items-start">
-        <img src="img/expl.png" alt="Action Icon" class="course-icon" />
-        <h3 class="text-xl font-bold mb-2">Action & Practice</h3>
-        <p class="text-gray-300 text-sm mb-4">Learn by doing — participate in projects, organize events, or help others through HDEF initiatives.</p>
+        <img src="img/expl.png" alt="Practice Icon" class="course-icon" />
+        <h3 class="text-xl font-bold mb-2">Practice: HDEF in action</h3>
+        <p class="text-gray-300 text-sm mb-4">Hands-on examples with HDEF.Life / HDEF.Care. Organizing help, events, shelters.</p>
+        <ul class="text-sm space-y-2 mb-4 list-disc pl-5 text-gray-300">
+          <li><a class="link-ylw" href="#case-events">Open‑air / fundraiser guide</a></li>
+          <li><a class="link-ylw" href="#case-care">Care: rehab, shelters</a></li>
+          <li><a class="link-ylw" href="#case-life">Coops: recycle, 3D print, greenhouses</a></li>
+        </ul>
+        <span class="mt-auto text-xs text-gray-500">Project‑based • contribute & earn reputation</span>
       </article>
     </div>
   </section>
 
-  <!-- PROFESSIONS INTRO -->
-  <section class="px-6 md:px-10 py-12 space-y-8">
-    <h2 class="text-3xl font-bold kicker mb-4">HDEF PROFESSIONAL PATHS</h2>
-    <p class="text-gray-300 max-w-4xl">Once you’ve grasped the basics of learning, participation, and action — you can explore professional directions inside the HDEF ecosystem. Each path aligns real‑world skills with new digital opportunities, guided by AI collaboration and DAO tools.</p>
+  <!-- Modules (accordions) -->
+  <section class="px-6 md:px-10 py-8 space-y-4" id="modules">
+    <h2 class="text-2xl font-bold kicker mb-2">MICRO‑COURSES & GUIDES</h2>
 
-    <!-- Coordinator -->
-    <article class="card rounded-2xl p-6 space-y-3">
-      <h3 class="text-2xl font-bold text-yellow-400">🌀 Coordinators / HDEF.Flow</h3>
-      <p class="text-gray-300">Orchestrate processes, manage projects, DAO operations, and task tokenization.</p>
-      <p class="text-sm text-gray-400">Professions:</p>
-      <ul class="list-disc pl-6 text-gray-200 text-sm">
-        <li>AI Product Manager</li>
-        <li>DAO Coordinator / Community Architect</li>
-        <li>System Facilitator (AI‑supported workflows)</li>
-        <li>Operational Designer (Ops Designer)</li>
-        <li>Data Steward for collective systems</li>
-        <li>Tokenomics Designer</li>
-      </ul>
-      <p class="text-sm text-gray-400">GPT skills: process visualization, roadmap creation, task automation, KPI tokenization, report generation.</p>
-    </article>
+    <!-- How to use GPT -->
+    <details class="card rounded-xl p-5" id="course-gpt" open>
+      <summary class="cursor-pointer select-none font-semibold text-lg">How to use GPT effectively</summary>
+      <div class="pt-4 text-sm text-gray-200 space-y-3">
+        <p>Learn prompts that work, iterate fast, and verify. Includes: structure for research, translation, planning, and coding helpers.</p>
+        <ol class="list-decimal pl-5 space-y-1">
+          <li>Prompt frame: <em>role → goal → constraints → format</em></li>
+          <li>Fast loop: draft → critique → refine → deliver</li>
+          <li>Safety: what not to share; offline-first notes</li>
+        </ol>
+        <p class="text-xs text-gray-400">Downloadable cheatsheet — coming soon.</p>
+      </div>
+    </details>
 
-    <!-- Amplifiers -->
-    <article class="card rounded-2xl p-6 space-y-3">
-      <h3 class="text-2xl font-bold text-yellow-400">📢 Amplifiers / HDEF.Voice</h3>
-      <p class="text-gray-300">Media, communication, content creation and influence.</p>
-      <ul class="list-disc pl-6 text-gray-200 text-sm">
-        <li>AI Content Creator</li>
-        <li>Video Editor with generative tools (Runway, Pika, Sora, etc.)</li>
-        <li>Podcaster / Voice host with GPT</li>
-        <li>Translator & Cultural Mediator</li>
-        <li>Digital Storyteller / Narrative Designer</li>
-        <li>PR Strategist with analytics generation</li>
-        <li>Visual Designer (Midjourney / DALL·E / Runway)</li>
-      </ul>
-      <p class="text-sm text-gray-400">GPT skills: scriptwriting, storytelling, multilingual content, podcast & video generation, media workflow automation.</p>
-    </article>
+    <!-- Learn to ask / consume info -->
+    <details class="card rounded-xl p-5" id="course-questions">
+      <summary class="cursor-pointer select-none font-semibold text-lg">How to read, watch, and ask questions</summary>
+      <div class="pt-4 text-sm text-gray-200 space-y-3">
+        <p>Signal vs noise, critical filters, and practical note‑taking.</p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>Five filters: source, incentives, time, numbers, consensus</li>
+          <li>Templates for asking: background → attempt → blocker → ask</li>
+          <li>Tools: spaced notes, bookmarks, and brief logs</li>
+        </ul>
+      </div>
+    </details>
 
-    <!-- Thinkers -->
-    <article class="card rounded-2xl p-6 space-y-3">
-      <h3 class="text-2xl font-bold text-yellow-400">🧠 Thinkers / HDEF.Lab</h3>
-      <p class="text-gray-300">Research, analytics, modeling, foresight and scientific exploration.</p>
-      <ul class="list-disc pl-6 text-gray-200 text-sm">
-        <li>Data Analyst / AI Research Assistant</li>
-        <li>Trend Analyst / Foresight Specialist</li>
-        <li>System Modeler / Simulation Designer</li>
-        <li>Science Communicator with GPT</li>
-        <li>Research Synthesizer (aggregation of findings)</li>
-        <li>Policy Designer</li>
-      </ul>
-      <p class="text-sm text-gray-400">GPT skills: data processing, system modeling, scenario generation, automatic source research and hypothesis generation.</p>
-    </article>
+    <!-- Security basics -->
+    <details class="card rounded-xl p-5" id="course-security">
+      <summary class="cursor-pointer select-none font-semibold text-lg">Personal security basics</summary>
+      <div class="pt-4 text-sm text-gray-200 space-y-3">
+        <p>Start simple: updates, strong auth, private browsing, and safe comms.</p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li><a class="link-ylw" href="https://ssd.eff.org/en" target="_blank" rel="noopener">EFF Surveillance Self‑Defense</a></li>
+          <li><a class="link-ylw" href="https://github.com/arkenfox/user.js" target="_blank" rel="noopener">Arkenfox Firefox hardening</a></li>
+          <li>Password managers, 2FA keys, and backup hygiene — guide (soon)</li>
+        </ul>
+      </div>
+    </details>
 
-    <!-- Human Layer -->
-    <article class="card rounded-2xl p-6 space-y-3">
-      <h3 class="text-2xl font-bold text-yellow-400">💠 Human Layer / HDEF.Care</h3>
-      <p class="text-gray-300">Ethics, psychology, support, and trust systems.</p>
-      <ul class="list-disc pl-6 text-gray-200 text-sm">
-        <li>AI Mentor / Career Navigator</li>
-        <li>Digital Psychologist (GPT‑supported)</li>
-        <li>Ethics Advisor / Moderation Specialist</li>
-        <li>DAO Conflict Mediator</li>
-        <li>HR / Onboarding Partner for AI teams</li>
-      </ul>
-      <p class="text-sm text-gray-400">GPT skills: dialogue analysis, case simulation, coaching, anonymous support, survey design and feedback systems.</p>
-    </article>
+    <!-- DAO -->
+    <details class="card rounded-xl p-5" id="course-dao">
+      <summary class="cursor-pointer select-none font-semibold text-lg">What is a DAO (and how HDEF uses it)</summary>
+      <div class="pt-4 text-sm text-gray-200 space-y-3">
+        <p>Plain‑language intro: transparent decisions, task‑based reputation, and layered circles (from local to global).</p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>Decision circles (from community to guilds)</li>
+          <li>Reputation = delivered tasks × peer review</li>
+          <li>Voting without spam: proposals, quorum, time‑boxes</li>
+        </ul>
+      </div>
+    </details>
 
-    <!-- Initiators -->
-    <article class="card rounded-2xl p-6 space-y-3">
-      <h3 class="text-2xl font-bold text-yellow-400">🚀 Initiators / HDEF.Start</h3>
-      <p class="text-gray-300">Launching ideas, entrepreneurship, and rapid prototyping.</p>
-      <ul class="list-disc pl-6 text-gray-200 text-sm">
-        <li>AI Startup Founder / Creator</li>
-        <li>Startup Architect (MVP design with GPT)</li>
-        <li>Blockchain Initiator (smart‑contract templates)</li>
-        <li>Business Modeler (AI‑assisted design)</li>
-        <li>Growth Hacker with generative systems</li>
-        <li>Pitch Architect (automated pitching, visualization)</li>
-      </ul>
-      <p class="text-sm text-gray-400">GPT skills: MVP creation, business plan generation, market analysis, auto team recruitment, idea tokenization.</p>
-    </article>
+    <!-- Tools -->
+    <details class="card rounded-xl p-5" id="course-tools">
+      <summary class="cursor-pointer select-none font-semibold text-lg">Tools for participation</summary>
+      <div class="pt-4 text-sm text-gray-200 space-y-3">
+        <ul class="list-disc pl-5 space-y-1">
+          <li>Discord / Matrix for chat; forums for long‑form</li>
+          <li>Voting & reputation tracker (spec – soon)</li>
+          <li>Wallets & IDs (optional) — custody safety</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Practice cases -->
+    <details class="card rounded-xl p-5" id="case-events">
+      <summary class="cursor-pointer select-none font-semibold text-lg">Case: Open‑air / fundraiser guide</summary>
+      <div class="pt-4 text-sm text-gray-200 space-y-3">
+        <p>From idea to event: permits, safety, promotion, line‑up, and donation rails. Inspired by grassroots concerts and street actions.</p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>Checklist & roles (org, tech, safety, comms)</li>
+          <li>Promo pack templates (posters, copy) — soon</li>
+          <li>Post‑event accounting & reputation points</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card rounded-xl p-5" id="case-care">
+      <summary class="cursor-pointer select-none font-semibold text-lg">Case: Care — rehab & shelters</summary>
+      <div class="pt-4 text-sm text-gray-200 space-y-3">
+        <p>Framework to launch local care hubs with transparent needs → tasks → reporting.</p>
+      </div>
+    </details>
+
+    <details class="card rounded-xl p-5" id="case-life">
+      <summary class="cursor-pointer select-none font-semibold text-lg">Case: Coops — recycle, 3D print, greenhouses</summary>
+      <div class="pt-4 text-sm text-gray-200 space-y-3">
+        <p>How to bootstrap small production and share output with the community.</p>
+      </div>
+    </details>
+    <!-- Employment / economy note -->
+    <div class="card rounded-xl p-5">
+      <h3 class="font-semibold text-lg">Work is changing fast</h3>
+      <p class="text-sm text-gray-200 mt-2">We’re preparing a simple brief on global employment trends in the last years and what skills pay off now. <span class="text-gray-400">(Coming soon)</span></p>
+    </div>
   </section>
+
+  <!-- Professions & Paths -->
+  <section class="px-6 md:px-10 py-10 space-y-6" id="roles">
+    <h2 class="text-2xl font-bold kicker mb-2">PROFESSIONS & PATHS</h2>
+    <p class="text-gray-300 max-w-3xl">After you master the basics — how to learn, vote and act — pick a path. Each role has starter tasks, core skills, and tools. Join one, or mix several.</p>
+
+    <!-- Role filters -->
+    <div class="flex flex-wrap gap-2">
+      <button class="px-3 py-1 rounded-full border border-gray-700 text-sm hover:border-yellow-500">All</button>
+      <button class="px-3 py-1 rounded-full border border-gray-700 text-sm hover:border-yellow-500">Builders</button>
+      <button class="px-3 py-1 rounded-full border border-gray-700 text-sm hover:border-yellow-500">Coordinators</button>
+      <button class="px-3 py-1 rounded-full border border-gray-700 text-sm hover:border-yellow-500">Amplifiers</button>
+      <button class="px-3 py-1 rounded-full border border-gray-700 text-sm hover:border-yellow-500">Thinkers</button>
+      <button class="px-3 py-1 rounded-full border border-gray-700 text-sm hover:border-yellow-500">Human Layer</button>
+      <button class="px-3 py-1 rounded-full border border-gray-700 text-sm hover:border-yellow-500">Initiators</button>
+      <button class="px-3 py-1 rounded-full border border-gray-700 text-sm hover:border-yellow-500">Members</button>
+    </div>
+
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+      <!-- Builders -->
+      <article class="card rounded-2xl p-6 flex flex-col">
+        <div class="flex items-center gap-3 mb-3">
+          <img src="img/role_build.png" class="w-8 h-8" alt="Builders" />
+          <h3 class="text-xl font-bold">Builders / HDEF.Build</h3>
+        </div>
+        <p class="text-sm text-gray-300">Create & integrate: repos, APIs, AI labs, rapid deploy. Code + no‑code.</p>
+        <ul class="mt-4 text-sm text-gray-300 list-disc pl-5 space-y-1">
+          <li><span class="link-ylw">Starter tasks:</span> fix issues, ship a micro‑tool, add docs</li>
+          <li><span class="link-ylw">Skills:</span> JS/Python, prompts, CI/CD, security basics</li>
+          <li><span class="link-ylw">Tools:</span> GitHub, Docker, Vercel/Fly, GPT</li>
+        </ul>
+        <a href="#" class="mt-4 text-sm link-ylw">View repos →</a>
+      </article>
+
+      <!-- Coordinators -->
+      <article class="card rounded-2xl p-6 flex flex-col">
+        <div class="flex items-center gap-3 mb-3">
+          <img src="img/role_flow.png" class="w-8 h-8" alt="Coordinators" />
+          <h3 class="text-xl font-bold">Coordinators / HDEF.Flow</h3>
+        </div>
+        <p class="text-sm text-gray-300">Visual task maps, project rhythm, DAO transparency.</p>
+        <ul class="mt-4 text-sm text-gray-300 list-disc pl-5 space-y-1">
+          <li><span class="link-ylw">Starter tasks:</span> triage backlog, run standups, publish weekly report</li>
+          <li><span class="link-ylw">Skills:</span> kanban, facilitation, basic tokenomics</li>
+          <li><span class="link-ylw">Tools:</span> boards, forms, analytics</li>
+        </ul>
+        <a href="#" class="mt-4 text-sm link-ylw">Open the board →</a>
+      </article>
+
+      <!-- Amplifiers -->
+      <article class="card rounded-2xl p-6 flex flex-col">
+        <div class="flex items-center gap-3 mb-3">
+          <img src="img/role_voice.png" class="w-8 h-8" alt="Amplifiers" />
+          <h3 class="text-xl font-bold">Amplifiers / HDEF.Voice</h3>
+        </div>
+        <p class="text-sm text-gray-300">Publish, translate, visualize — with AI & collective sense‑making.</p>
+        <ul class="mt-4 text-sm text-gray-300 list-disc pl-5 space-y-1">
+          <li><span class="link-ylw">Starter tasks:</span> translate a post, design a one‑pager, subtitle a video</li>
+          <li><span class="link-ylw">Skills:</span> editing, design, basic data‑viz</li>
+          <li><span class="link-ylw">Tools:</span> editors, Figma, GPT, TTS</li>
+        </ul>
+        <a href="#" class="mt-4 text-sm link-ylw">Media hub →</a>
+      </article>
+
+      <!-- Thinkers -->
+      <article class="card rounded-2xl p-6 flex flex-col">
+        <div class="flex items-center gap-3 mb-3">
+          <img src="img/role_lab.png" class="w-8 h-8" alt="Thinkers" />
+          <h3 class="text-xl font-bold">Thinkers / HDEF.Lab</h3>
+        </div>
+        <p class="text-sm text-gray-300">Analytics, modeling, forecasting. Simulate social systems.</p>
+        <ul class="mt-4 text-sm text-gray-300 list-disc pl-5 space-y-1">
+          <li><span class="link-ylw">Starter tasks:</span> short brief, dataset cleanup, small simulation</li>
+          <li><span class="link-ylw">Skills:</span> research, stats, Python/R</li>
+          <li><span class="link-ylw">Tools:</span> notebooks, dashboards</li>
+        </ul>
+        <a href="#" class="mt-4 text-sm link-ylw">Open lab notes →</a>
+      </article>
+
+      <!-- Human Layer -->
+      <article class="card rounded-2xl p-6 flex flex-col">
+        <div class="flex items-center gap-3 mb-3">
+          <img src="img/role_care.png" class="w-8 h-8" alt="Human Layer" />
+          <h3 class="text-xl font-bold">Human Layer / HDEF.Care</h3>
+        </div>
+        <p class="text-sm text-gray-300">Trust & support: anonymous help, legal/psych aid, verified empathy.</p>
+        <ul class="mt-4 text-sm text-gray-300 list-disc pl-5 space-y-1">
+          <li><span class="link-ylw">Starter tasks:</span> intake forms, hotline shifts, resource lists</li>
+          <li><span class="link-ylw">Skills:</span> confidentiality, de‑escalation, basic ops</li>
+          <li><span class="link-ylw">Tools:</span> encrypted chat, case tracker</li>
+        </ul>
+        <a href="#" class="mt-4 text-sm link-ylw">Care requests →</a>
+      </article>
+
+      <!-- Initiators -->
+      <article class="card rounded-2xl p-6 flex flex-col">
+        <div class="flex items-center gap-3 mb-3">
+          <img src="img/role_start.png" class="w-8 h-8" alt="Initiators" />
+          <h3 class="text-xl font-bold">Initiators / HDEF.Start</h3>
+        </div>
+        <p class="text-sm text-gray-300">Launch ideas fast. Teams, tokenization, scaling via templates.</p>
+        <ul class="mt-4 text-sm text-gray-300 list-disc pl-5 space-y-1">
+          <li><span class="link-ylw">Starter tasks:</span> pitch deck, pilot budget, MVP checklist</li>
+          <li><span class="link-ylw">Skills:</span> product, BD, legal basics</li>
+          <li><span class="link-ylw">Tools:</span> templates, contracts, guides</li>
+        </ul>
+        <a href="#" class="mt-4 text-sm link-ylw">Start kit →</a>
+      </article>
+
+      <!-- Members -->
+      <article class="card rounded-2xl p-6 flex flex-col">
+        <div class="flex items-center gap-3 mb-3">
+          <img src="img/role_life.png" class="w-8 h-8" alt="Members" />
+          <h3 class="text-xl font-bold">Members / HDEF.Life</h3>
+        </div>
+        <p class="text-sm text-gray-300">Every action counts: vote, survey, and earn rewards. Reputation = legacy.</p>
+        <ul class="mt-4 text-sm text-gray-300 list-disc pl-5 space-y-1">
+          <li><span class="link-ylw">Starter tasks:</span> vote, share feedback, complete a micro‑task</li>
+          <li><span class="link-ylw">Skills:</span> clear communication, reliability</li>
+          <li><span class="link-ylw">Tools:</span> polls, quests, wallet (optional)</li>
+        </ul>
+        <a href="#" class="mt-4 text-sm link-ylw">Get started →</a>
+      </article>
+    </div>
+  </section>
+
+
+  <!-- CTA Join / Write -->
+  <section class="px-6 md:px-10 py-12 grid md:grid-cols-2 gap-6 items-stretch">
+    <a href="join.html" class="card rounded-2xl p-6 hover:border-yellow-500 transition">
+      <h3 class="text-2xl font-extrabold mb-2">Join us</h3>
+      <p class="text-gray-300">Become part of the resistance to tyranny. Learn, act, and earn reputation for completed tasks.</p>
+    </a>
+    <a href="write.html" class="card rounded-2xl p-6 hover:border-yellow-500 transition">
+      <h3 class="text-2xl font-extrabold mb-2">Write political prisoners</h3>
+      <p class="text-gray-300">Send letters of support to victims of political persecution.</p>
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-auto flex flex-col md:flex-row items-center justify-between px-6 md:px-10 py-6 border-t border-gray-800 text-base text-yellow-400 gap-4">
+    <div class="flex gap-6">
+      <a href="https://t.me/hdef_news" target="_blank" rel="noopener"><img src="img/icon_telegram.png" alt="Telegram" class="w-6 h-6" /></a>
+      <a href="https://x.com/hdef_news" target="_blank" rel="noopener"><img src="img/icon_twitter.png" alt="X / Twitter" class="w-6 h-6" /></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord" class="w-6 h-6" /></a>
+    </div>
+    <div class="space-x-6">
+      <a href="#">PRIVACY</a>
+      <a href="#">CONTACT</a>
+    </div>
+  </footer>
+
+  <script>
+    // Minimal keyboard shortcut for the search box
+    (function(){
+      const input = document.querySelector('input[type="search"]');
+      window.addEventListener('keydown', (e) => {
+        if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+          e.preventDefault();
+          input?.focus();
+        }
+      });
+    })();
+  </script>
 </body>
+</html>
 </html>
