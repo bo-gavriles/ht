@@ -22,11 +22,11 @@
     .nav-icon { width: 28px; height: 28px; margin-right: .75rem; }
     .nav-button { display:flex; align-items:center; font-weight: 700; font-size: 1.125rem; background: var(--hdef-yellow); color:#000; padding:.75rem 1rem; border-radius:.75rem; transition: .2s ease; }
     .nav-button:hover { filter: brightness(1.05); }
-    .pill { background: #141414; border: 1px solid var(--hdef-stroke); }
     .card { background: var(--hdef-card); border: 1px solid var(--hdef-stroke); }
     .kicker { letter-spacing: .08em; font-weight: 800; color: var(--hdef-yellow); }
     .link-ylw { color: var(--hdef-yellow); }
     .link-ylw:hover { text-decoration: underline; }
+    .course-icon { width: 40px; height: 40px; margin-bottom: 1rem; }
   </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -37,7 +37,7 @@
         <a href="index.html" class="flex items-center">
           <img src="img/hdeflogo.png" alt="HDEF.INFO" class="h-12" />
         </a>
-        <span class="hidden md:inline text-sm kicker">YOU CAN MORE</span>
+        <span class="hidden md:inline text-sm kicker">ONE TAP AGAINST TYRANNY</span>
       </div>
       <nav class="flex flex-wrap gap-3 md:gap-5 mt-3 md:mt-0">
         <a href="learn.html" class="nav-button"><img src="img/learn.png" alt="Learn" class="nav-icon">Learn</a>
@@ -57,8 +57,7 @@
         Short, practical tracks to help anyone adapt to the new reality:
         <span class="font-semibold link-ylw">tech, AI, security, autonomy</span>. No fluff — only what helps you act.
       </p>
-      <!-- Search / Command box -->
-      <div class="mt-6 flex items-center pill rounded-xl pl-4 pr-2 py-2 w-full">
+      <div class="mt-6 flex items-center bg-[#141414] border border-gray-800 rounded-xl pl-4 pr-2 py-2 w-full">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
         <input aria-label="Search modules" type="search" placeholder="Search modules, e.g. ‘how to use GPT’" class="flex-1 bg-transparent px-3 py-2 text-base focus:outline-none" />
         <span class="hidden md:inline text-xs text-gray-400 px-2 py-1 border border-gray-700 rounded">⌘K</span>
@@ -66,12 +65,12 @@
     </div>
   </section>
 
-  <!-- Learning Tracks -->
+  <!-- Learning Tracks with icons -->
   <section class="px-6 md:px-10 pb-4">
     <h2 class="text-2xl font-bold mb-4 kicker">START HERE</h2>
     <div class="grid md:grid-cols-3 gap-6">
-      <!-- Base / Onboarding -->
-      <article class="card rounded-2xl p-5 flex flex-col">
+      <article class="card rounded-2xl p-5 flex flex-col items-start">
+        <img src="img/stud.png" alt="Syud Icon" class="course-icon" />
         <h3 class="text-xl font-bold mb-2">Base: How to learn & ask</h3>
         <p class="text-gray-300 text-sm mb-4">Reading smart, asking good questions, using GPT effectively, and avoiding info-overload.</p>
         <ul class="text-sm space-y-2 mb-4 list-disc pl-5 text-gray-300">
@@ -82,8 +81,8 @@
         <span class="mt-auto text-xs text-gray-500">~90 min total • beginner</span>
       </article>
 
-      <!-- DAO & Community -->
-      <article class="card rounded-2xl p-5 flex flex-col">
+      <article class="card rounded-2xl p-5 flex flex-col items-start">
+        <img src="img/vota.png" alt="DAO Icon" class="course-icon" />
         <h3 class="text-xl font-bold mb-2">DAO & Participation</h3>
         <p class="text-gray-300 text-sm mb-4">What is a DAO, reputation, tasks, voting, and how HDEF works in practice.</p>
         <ul class="text-sm space-y-2 mb-4 list-disc pl-5 text-gray-300">
@@ -94,8 +93,8 @@
         <span class="mt-auto text-xs text-gray-500">~70 min • no prior crypto needed</span>
       </article>
 
-      <!-- Practice / Cases -->
-      <article class="card rounded-2xl p-5 flex flex-col">
+      <article class="card rounded-2xl p-5 flex flex-col items-start">
+        <img src="img/expl.png" alt="Practice Icon" class="course-icon" />
         <h3 class="text-xl font-bold mb-2">Practice: HDEF in action</h3>
         <p class="text-gray-300 text-sm mb-4">Hands-on examples with HDEF.Life / HDEF.Care. Organizing help, events, shelters.</p>
         <ul class="text-sm space-y-2 mb-4 list-disc pl-5 text-gray-300">
@@ -107,146 +106,5 @@
       </article>
     </div>
   </section>
-
-  <!-- Modules (accordions) -->
-  <section class="px-6 md:px-10 py-8 space-y-4" id="modules">
-    <h2 class="text-2xl font-bold kicker mb-2">MICRO‑COURSES & GUIDES</h2>
-
-    <!-- How to use GPT -->
-    <details class="card rounded-xl p-5" id="course-gpt" open>
-      <summary class="cursor-pointer select-none font-semibold text-lg">How to use GPT effectively</summary>
-      <div class="pt-4 text-sm text-gray-200 space-y-3">
-        <p>Learn prompts that work, iterate fast, and verify. Includes: structure for research, translation, planning, and coding helpers.</p>
-        <ol class="list-decimal pl-5 space-y-1">
-          <li>Prompt frame: <em>role → goal → constraints → format</em></li>
-          <li>Fast loop: draft → critique → refine → deliver</li>
-          <li>Safety: what not to share; offline-first notes</li>
-        </ol>
-        <p class="text-xs text-gray-400">Downloadable cheatsheet — coming soon.</p>
-      </div>
-    </details>
-
-    <!-- Learn to ask / consume info -->
-    <details class="card rounded-xl p-5" id="course-questions">
-      <summary class="cursor-pointer select-none font-semibold text-lg">How to read, watch, and ask questions</summary>
-      <div class="pt-4 text-sm text-gray-200 space-y-3">
-        <p>Signal vs noise, critical filters, and practical note‑taking.</p>
-        <ul class="list-disc pl-5 space-y-1">
-          <li>Five filters: source, incentives, time, numbers, consensus</li>
-          <li>Templates for asking: background → attempt → blocker → ask</li>
-          <li>Tools: spaced notes, bookmarks, and brief logs</li>
-        </ul>
-      </div>
-    </details>
-
-    <!-- Security basics -->
-    <details class="card rounded-xl p-5" id="course-security">
-      <summary class="cursor-pointer select-none font-semibold text-lg">Personal security basics</summary>
-      <div class="pt-4 text-sm text-gray-200 space-y-3">
-        <p>Start simple: updates, strong auth, private browsing, and safe comms.</p>
-        <ul class="list-disc pl-5 space-y-1">
-          <li><a class="link-ylw" href="https://ssd.eff.org/en" target="_blank" rel="noopener">EFF Surveillance Self‑Defense</a></li>
-          <li><a class="link-ylw" href="https://github.com/arkenfox/user.js" target="_blank" rel="noopener">Arkenfox Firefox hardening</a></li>
-          <li>Password managers, 2FA keys, and backup hygiene — guide (soon)</li>
-        </ul>
-      </div>
-    </details>
-
-    <!-- DAO -->
-    <details class="card rounded-xl p-5" id="course-dao">
-      <summary class="cursor-pointer select-none font-semibold text-lg">What is a DAO (and how HDEF uses it)</summary>
-      <div class="pt-4 text-sm text-gray-200 space-y-3">
-        <p>Plain‑language intro: transparent decisions, task‑based reputation, and layered circles (from local to global).</p>
-        <ul class="list-disc pl-5 space-y-1">
-          <li>Decision circles (from community to guilds)</li>
-          <li>Reputation = delivered tasks × peer review</li>
-          <li>Voting without spam: proposals, quorum, time‑boxes</li>
-        </ul>
-      </div>
-    </details>
-
-    <!-- Tools -->
-    <details class="card rounded-xl p-5" id="course-tools">
-      <summary class="cursor-pointer select-none font-semibold text-lg">Tools for participation</summary>
-      <div class="pt-4 text-sm text-gray-200 space-y-3">
-        <ul class="list-disc pl-5 space-y-1">
-          <li>Discord / Matrix for chat; forums for long‑form</li>
-          <li>Voting & reputation tracker (spec – soon)</li>
-          <li>Wallets & IDs (optional) — custody safety</li>
-        </ul>
-      </div>
-    </details>
-
-    <!-- Practice cases -->
-    <details class="card rounded-xl p-5" id="case-events">
-      <summary class="cursor-pointer select-none font-semibold text-lg">Case: Open‑air / fundraiser guide</summary>
-      <div class="pt-4 text-sm text-gray-200 space-y-3">
-        <p>From idea to event: permits, safety, promotion, line‑up, and donation rails. Inspired by grassroots concerts and street actions.</p>
-        <ul class="list-disc pl-5 space-y-1">
-          <li>Checklist & roles (org, tech, safety, comms)</li>
-          <li>Promo pack templates (posters, copy) — soon</li>
-          <li>Post‑event accounting & reputation points</li>
-        </ul>
-      </div>
-    </details>
-
-    <details class="card rounded-xl p-5" id="case-care">
-      <summary class="cursor-pointer select-none font-semibold text-lg">Case: Care — rehab & shelters</summary>
-      <div class="pt-4 text-sm text-gray-200 space-y-3">
-        <p>Framework to launch local care hubs with transparent needs → tasks → reporting.</p>
-      </div>
-    </details>
-
-    <details class="card rounded-xl p-5" id="case-life">
-      <summary class="cursor-pointer select-none font-semibold text-lg">Case: Coops — recycle, 3D print, greenhouses</summary>
-      <div class="pt-4 text-sm text-gray-200 space-y-3">
-        <p>How to bootstrap small production and share output with the community.</p>
-      </div>
-    </details>
-
-    <!-- Employment / economy note -->
-    <div class="card rounded-xl p-5">
-      <h3 class="font-semibold text-lg">Work is changing fast</h3>
-      <p class="text-sm text-gray-200 mt-2">We’re preparing a simple brief on global employment trends in the last years and what skills pay off now. <span class="text-gray-400">(Coming soon)</span></p>
-    </div>
-  </section>
-
-  <!-- CTA Join / Write -->
-  <section class="px-6 md:px-10 py-12 grid md:grid-cols-2 gap-6 items-stretch">
-    <a href="join.html" class="card rounded-2xl p-6 hover:border-yellow-500 transition">
-      <h3 class="text-2xl font-extrabold mb-2">Join us</h3>
-      <p class="text-gray-300">Become part of the resistance to tyranny. Learn, act, and earn reputation for completed tasks.</p>
-    </a>
-    <a href="write.html" class="card rounded-2xl p-6 hover:border-yellow-500 transition">
-      <h3 class="text-2xl font-extrabold mb-2">Write political prisoners</h3>
-      <p class="text-gray-300">Send letters of support to victims of political persecution.</p>
-    </a>
-  </section>
-
-  <!-- Footer -->
-  <footer class="mt-auto flex flex-col md:flex-row items-center justify-between px-6 md:px-10 py-6 border-t border-gray-800 text-base text-yellow-400 gap-4">
-    <div class="flex gap-6">
-      <a href="https://t.me/hdef_news" target="_blank" rel="noopener"><img src="img/icon_telegram.png" alt="Telegram" class="w-6 h-6" /></a>
-      <a href="https://x.com/hdef_news" target="_blank" rel="noopener"><img src="img/icon_twitter.png" alt="X / Twitter" class="w-6 h-6" /></a>
-      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord" class="w-6 h-6" /></a>
-    </div>
-    <div class="space-x-6">
-      <a href="#">PRIVACY</a>
-      <a href="#">CONTACT</a>
-    </div>
-  </footer>
-
-  <script>
-    // Minimal keyboard shortcut for the search box
-    (function(){
-      const input = document.querySelector('input[type="search"]');
-      window.addEventListener('keydown', (e) => {
-        if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
-          e.preventDefault();
-          input?.focus();
-        }
-      });
-    })();
-  </script>
 </body>
 </html>
